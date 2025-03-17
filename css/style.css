@@ -1,0 +1,198 @@
+/*I did ask ChatGPT for assistance on the keyframe reference with the logo keyframe! As well as asking chat to help me fix tiny errors that I do not know how to fix!*/
+
+/*Step #1 animating the logo with keyframes starting at a width of 25px and growing to 475px while taking 5 seconds to do so*/ 
+@keyframes growLogo {
+    0% {
+        width: 25px;
+        opacity: 0;
+    }
+    100% {
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+#logo {
+    animation: growLogo 5s ease-in-out forwards;
+}
+
+
+/*Step #2
+Edit the body element to use the Poppins font (using Google fonts) with serif as a backup.  It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1.*/
+body{
+    font-family: "Poppins", serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+/*Step #3 Edit the css for the header tag (all instances) to use flex to match our example.*/
+
+header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*Step 4 Edit the css for the nav_links class to use flex to match our example. Do not modify the list items or the links - modify the nav_links class to use flex. */
+.nav_links{
+    display: flex;
+    flex-direction: column;
+}
+
+/*Step 5 Come back and do this challenge to style the links so that they have same color even if visited*/
+/*a {
+    color: #0056b3;
+}
+
+a:visited {
+    color: #0056b3;
+}*/
+
+/*Step 6 Identify the proper selector to style ONLY those header elements that are direct children of a card class.  The required styling is the following: 
+background: #288088,
+solid 2px border using #45ADAD,
+20px of padding on the top and the bottom, 
+50px border-radius on the top left and right corners. */
+.card > header{
+    background: #288088;
+    border:  2px border using #45ADAD;
+    padding: 20px 0;
+    /*border-radius: 50px;*/
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+/*Step 7 editing the card class to match example*/
+.card {
+    flex: 1;
+    max-width: 450px;
+    background-color: white;
+    border: 2px solid #45ADAD;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+/* Step 8: */
+.pricing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: stretch; 
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Step 9: */
+.gallery img {
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+    height: auto;
+}
+
+/* Step 10:*/
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/*step 11*/
+header {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.nav_links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+/*Step 12:*/
+.pricing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px; 
+}
+
+.card {
+    flex: 0 1 275px;
+    background-color: white;
+    border: 2px solid #45ADAD;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+/*Step 13 Come back to this and do this for the header*/
+/*I am unable to solve step 13 challenge, everytime i tried it i kept recieivng errors and the header was going away causing me lots of issues!"*/
+
+main {
+    margin-top: 90px; /* Pushes content down to make space for header */
+}
+
+
+/*Step 14 Disable Animation for users who prefer reduced motion:*/
+@media (prefers-reduced-motion: reduce) {
+    #logo {
+        animation: none;
+    }
+}
+
+/*step 15 and 16 adjusting font and font size for printing in potrait mode as well as background image being removed:*/
+
+@media print {
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 17px;
+        background: none;
+    }
+
+/*Step 17: fixing and editing the nav/nav_links element so they are spaced accordingly*/
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav_links {
+        display: flex;
+        gap: 30px;
+    }
+
+/*Step 18:  editing the pricing class so elements align on bottom*/ 
+    .pricing {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 20px;
+    }
+
+/*Step 19: Card elements having solid borders of 2px of of #45ADDD and use flex of 325px. */
+    .card {
+        flex: 1;
+        max-width: 325px;
+        border: 2px solid #45ADDD;
+        padding: 20px;
+        text-align: center;
+    }
+
+/*Step 20: Hiding the gallery*/
+    .gallery {
+        display: none;
+    }
+
+/*Step 21: Adding thumbs up entity as shown in the cards! this is challening step*/
+    .card ul li:nth-child(2)::after {
+        content: " 👍";
+    }
+}
