@@ -1,4 +1,5 @@
 /*I did ask ChatGPT for assistance on the keyframe reference with the logo keyframe! As well as asking chat to help me fix tiny errors that I do not know how to fix!*/
+/*Trying to make it load through github!*/
 
 /*Step #1 animating the logo with keyframes starting at a width of 25px and growing to 475px while taking 5 seconds to do so*/ 
 @keyframes growLogo {
